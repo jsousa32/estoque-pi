@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Web - TDE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="css/index.css">        
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a href="#" class="navbar-brand mb-0 h1">
+                <img class="d-inline-block align-center" src="./img/MicrosoftTeams-image.png" alt="Home" width="50" height="50">
+                Stock Control
+            </a>
+            <button 
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            class="navbar-toggler"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a href="index.html" class="nav-link"><i class="bi bi-house"></i> Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" 
+                        class="nav-link dropdown-toggle"
+                        id="navbarDropdown"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <i class="bi bi-cart"></i> Products
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a href="products.html" class="dropdown-item"><i class="bi bi-plus"></i> Add Product</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="#categoryModal" role="button" data-bs-target="#categoryModal" data-bs-toggle="modal" class="nav-link"><i class="bi bi-tag"></i> Category</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="about.html" class="nav-link"><i class="bi bi-file-person"></i> About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <form>
+            <div class="row mt-2">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                    <div class="form-group" style="text-align: center;">
+                        <label for="id">Id</label>
+                        <input  style="margin-top: 2%" type="number" min="0" class="form-control" id="id" placeholder="Find by Id...">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                    <div class="form-group" style="text-align: center;">
+                        <label for="products">Products</label>
+                        <input  style="margin-top: 2%" type="products" class="form-control" id="products" placeholder="Find Products...">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                    <div class="form-group" style="text-align: center;">
+                        <label for="formControlSelect">Category</label>
+                        <select style="margin-top: 2%" class="form-control" id="formControlSelect">
+                            <option>Fish</option>
+                            <option>Meal</option>
+                            <option>Fruit</option>
+                            <option>Vegetables</option>
+                            <option>Pasta</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-12">
+                <table id="example" class="table table-striped" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th id="options"></th>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Quantity</th>
+                            <th>Price(Unity)</th>
+                            <th>Provide</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <a class="btn btn-default bi bi-filter" href="edit.html" role="button"></a>                                
+                                <a class="btn btn-default bi bi-dash-circle" href="#removeModal" role="button" data-bs-target="#removeModal" data-bs-toggle="modal"></a>
+                            </td>
+                            <td>1</td>
+                            <td>Ham</td>
+                            <td>Meal</td>
+                            <td>61</td>
+                            <td>$ 10</td>
+                            <td>Friboi</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="categoryModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Registry Category</h5>
+            </div>
+            <div class="modal-body">
+                <div class="form-group" style="text-align: left;">
+                    <label for="products"><h6>Category</h6></label>
+                    <input  style="margin-top: 2%" type="category" class="form-control" id="category" placeholder="Category...">
+                </div>
+            </div>
+            <div class="modal-footer">
+              <a href="index.html" type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</a>
+              <a href="index.html" type="button" class="btn btn-outline-success">Save changes</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="removeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Remove Product</h5>
+            </div>
+            <div class="modal-body">
+                <div class="form-group" style="text-align: left;">
+                   <span><h5>Name:</h5>Meal</span>
+                   <span><h5 style="margin-top: 5%;">Quantity:</h5><input  style="margin-top: 2%" type="number" min="0" max="61" class="form-control" id="products" placeholder="Quantity of Products..."></span>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <a href="index.html" type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</a>
+              <a href="index.html" type="button" class="btn btn-outline-danger">Remove</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+        
+ 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Web - TDE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="css/index.css">        
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a href="index.html" class="navbar-brand mb-0 h1">
+                <img class="d-inline-block align-center" src="./img/MicrosoftTeams-image.png" alt="Home" width="50" height="50">
+                Stock Control
+            </a>
+            <button 
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            class="navbar-toggler"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a href="index.html" class="nav-link"><i class="bi bi-house"></i> Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" 
+                        class="nav-link dropdown-toggle"
+                        id="navbarDropdown"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <i class="bi bi-cart"></i> Products
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a href="products.html" class="dropdown-item"><i class="bi bi-plus"></i> Add Product</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item active">
+                        <a data-bs-target="#exampleModal" data-bs-toggle="modal" href="#exampleModal" class="nav-link"><i class="bi bi-tag"></i> Category</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="about.html" class="nav-link"><i class="bi bi-file-person"></i> About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <form>
+            <div class="row mt-2">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                    <div class="form-group" style="text-align: center;">
+                        <label for="id">Id</label>
+                        <input  style="margin-top: 2%" type="id" class="form-control" id="id" placeholder="Id Product...">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                    <div class="form-group" style="text-align: center;">
+                        <label for="name">Name</label>
+                        <input  style="margin-top: 2%" type="name" class="form-control" id="name" placeholder="Name Products...">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                    <div class="form-group" style="text-align: center;">
+                        <label for="formControlSelect">Category</label>
+                        <select style="margin-top: 2%" class="form-control" id="formControlSelect">
+                            <option>Fish</option>
+                            <option>Meal</option>
+                            <option>Fruit</option>
+                            <option>Vegetables</option>
+                            <option>Pasta</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                    <div class="form-group" style="text-align: center;">
+                        <label for="quantity">Quantity</label>
+                        <input  style="margin-top: 2%" type="quantity" class="form-control" id="quantity" placeholder="Quantity of products...">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                    <div class="form-group" style="text-align: center;">
+                        <label for="price">Price</label>
+                        <input  style="margin-top: 2%" type="price" class="form-control" id="price" placeholder="Price Products...">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                    <div class="form-group" style="text-align: center;">
+                        <label for="provider">Provider</label>
+                        <input  style="margin-top: 2%" type="provider" class="form-control" id="provider" placeholder="Provider...">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-end mt-5">
+            <div class="col-md-4 offset-md-3" style="text-align: right;">
+                <a href="index.html" type="button" class="btn btn-outline-success" data-dismiss="modal">Save Changes</a>
+                <a href="index.html" type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Registry Category</h5>
+            </div>
+            <div class="modal-body">
+                <div class="form-group" style="text-align: left;">
+                    <label for="products"><h6>Category</h6></label>
+                    <input  style="margin-top: 2%" type="category" class="form-control" id="category" placeholder="Category...">
+                </div>
+            </div>
+            <div class="modal-footer">
+              <a href="products.html" type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</a>
+              <a href="products.html" type="button" class="btn btn-outline-success">Save changes</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+        
+ 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  </body>
+</html>
